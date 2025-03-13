@@ -4,7 +4,7 @@ from geopy.extra.rate_limiter import RateLimiter
 
 def get_location_coordinates(place_name):
     try:
-        geolocator = Nominatim(user_agent="your_app_name", timeout=10)
+        geolocator = Nominatim(user_agent="text-to-location", timeout=10)
         geocode = RateLimiter(geolocator.geocode, min_delay_seconds=1)
         location = geocode(place_name)
         if location:
